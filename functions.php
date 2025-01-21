@@ -7,6 +7,14 @@
  * @package otwpstudy
  */
 
+function otwpstudy_enqueue_scripts() {
+	wp_enqueue_style('otwpstudy-general', get_template_directory_uri().'/assets/style/general.css', array(),'1.1', 'all' );
+
+	wp_enqueue_script('otwpstudy-script', get_template_directory_uri().'/assets/scripts/script.js', array('jquery'), '1.1', true );
+};
+add_action('wp_enqueue_scripts', 'otwpstudy_enqueue_scripts');
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
